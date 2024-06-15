@@ -1,0 +1,9 @@
+package com.quiz.controller;
+
+public class QuizTest {
+
+	public QuizTest() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

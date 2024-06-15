@@ -1,0 +1,10 @@
+package com.quiz.repository;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.quiz.entities.Quiz;
+
+public interface quizRepo extends CrudRepository<Quiz, Long> {
+
+	
+}

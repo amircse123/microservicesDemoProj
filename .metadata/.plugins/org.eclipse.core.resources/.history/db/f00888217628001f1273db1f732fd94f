@@ -1,0 +1,6 @@
+package com.question.service;
+
+public class QuestionServiceImpl implements QuestionService{
+
+	
+}

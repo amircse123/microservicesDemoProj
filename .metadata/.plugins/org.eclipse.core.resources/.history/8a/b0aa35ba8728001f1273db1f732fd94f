@@ -1,0 +1,44 @@
+package com.quiz.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.quiz.entities.Quiz;
+import com.quiz.repository.QuizRepo;
+
+
+@Service
+public class QuizServiceImpl implements QuizService{
+	@Autowired
+	private QuizRepo repo;
+
+	@Override
+	public Quiz add(Quiz quiz) {
+		
+		return repo.save(quiz);
+	}
+
+	@Override
+	public List<Quiz> get() {
+
+		return repo.findAll();
+	}
+
+	
+	@Override
+	public Quiz get(Long id) {
+		Quiz quiz = repo.findById(id).orElseThrow(()->new RuntimeException("quiz not found"));
+		
+		return quiz;
+	}
+	
+	@Override
+	public Quiz updateQuiz(Quiz q, Long id) {
+		Quiz quiz = repo.findById(id).orElseThrow(()->new RuntimeException("quiz not found"));
+		quiz.setTitle(q.setTitle(""));
+		
+		return null;
+	}
+
+}
